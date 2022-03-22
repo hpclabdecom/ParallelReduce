@@ -17,7 +17,7 @@ public class Main {
 		List<Integer> input = new LinkedList<Integer>();
 		Random r = new Random();
 		
-		for(int i=0; i<640000; i++)
+		for(int i=0; i<10000000; i++)
 			input.add(r.nextInt(1000));
 		
 		MapReduce mr = new MapReduce();

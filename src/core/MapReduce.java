@@ -12,13 +12,14 @@ public class MapReduce {
 	private List<List<Integer>> segments, segmentsAux;
 	private int partitions;
 	
-	ExecutorService pool = Executors.newCachedThreadPool();
+	ExecutorService pool;
 	
 	public MapReduce(){
 		int cores = Runtime.getRuntime().availableProcessors();
 		partitions = 2*cores;
 		segments = new LinkedList<List<Integer>>();
 		segmentsAux = new LinkedList<List<Integer>>();
+		pool = Executors.newFixedThreadPool(cores);
 	}
 	
 	//split the initial dataset
